@@ -1,0 +1,36 @@
+/* 배달페이지 메인 */
+.delivery-main {
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+delivery-main p {
+    font-size: 16px;
+}
+.order-details {
+    margin-top: 20px;
+}
+.order-details p {
+    margin: 5px 0;
+}
+.delivery-item-info {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.delivery-item-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 10px;
+}

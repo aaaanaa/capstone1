@@ -1,0 +1,66 @@
+/* 중앙 부분 */
+.profile-section {
+    width: 762px;
+    margin: 0 auto;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+.profile-fix-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 45px 20px 30px;
+}
+.profile-fix-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.profile-select {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.profile-select input {
+    align-self: flex-end;
+}
+.input-profile {
+    margin-bottom: 20px;
+}
+.input-profile label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-profile input[type="text"], .input-profile textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+}
+.input-profile textarea {
+    resize: none;
+    height: 100px;
+}
+.profile-modify {
+    display: flex;
+    justify-content: flex-end;
+}
+.profile-button {
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.profile-button:hover {
+    background-color: #ccc;
+}

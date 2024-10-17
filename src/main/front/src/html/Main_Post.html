@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공방친구</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        @font-face {
+            font-family: 'Ownglyph_ryuttung-Rg';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-width: 1000px; /* 최소 너비 설정 */
+            min-height: 100%; /* 최소 높이를 뷰포트 높이로 설정 */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            /* font-family: 'Nanum Gothic', sans-serif; */  /* 구글 폰트 - 나눔 고딕 */
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;  /* 눈누 - 온글잎 루뚱체 */
+        }
+        /* 상단 바 */
+        .header {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between; /* 양쪽으로 우선 정렬 */
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        .main-logo {
+            padding-left: 20px;
+            font-size: 40px;
+            color: #7C6E14;
+            font-family: 'NanumDaHaengCe', sans-serif; /* 네이버 폰트 - 나눔 다행체 */
+            cursor: pointer;
+        }
+        .search-box {
+            width: 500px;
+            height: 45px;
+            position: relative;
+            border: 2px solid black;
+            border-radius: 3px;
+        }
+        .search-box input[type="text"] {
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: 18px;
+            padding-left: 10px;
+            padding-right: 40px;
+            box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+            color: #4e4e4e;
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+        }
+        .search-box img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            top: 8px;
+            cursor: pointer;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .profile p {
+            margin-left: 15px;
+            width: 112px;
+        }
+        /* 메인 컨텐츠 부분 */
+        .center {
+            display: flex;
+            /* flex-direction: row; /* 수평 정렬 */
+            /* align-items: start; /* 없어도 잘됨. 혹시모르니 놔두기 */
+            width: 100%;
+            justify-content: space-between;
+        }
+        /* 왼쪽 사이드바 */
+        .left-sidebar {
+            width: 250px;
+            height: 700px;
+            background-color: #f5f5dc;
+            font-size: 14px;
+            border: 1px solid #DDDDDD;
+            position: relative; /* .footer position: absolute랑 세트 */
+        }
+        .left-sidebar h2 {
+            display: flex;       /* Flexbox 레이아웃을 사용 */
+            justify-content: space-between;
+            align-items: center; /* 세로 방향으로 중앙 정렬 */
+        }
+        .left-sidebar h2 img {
+            width: 20px;
+            height: 20px;
+        }
+        .category {
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid black;
+        }
+        .footer {
+            width: 100%;
+            font-size: 18px;
+            position: absolute; /* 아래줄 bottom: 5px과 같이 아래쪽으로 붙도록 도와줌 */
+            bottom: 5px;
+        }
+        .footer ul {
+            list-style-type: none; /* li의 점 없애기 */
+            padding: 10px;
+            margin: 0;
+        }
+        .footer ul li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .footer ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 20px;
+        }
+        /* 오른쪽 사이드바 */
+        .right-sidebar {
+            width: 250px;
+            height: 700px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        .section {
+            border-bottom: 1px solid #ddd;
+        }
+        .section h3 {
+            margin: 0 0 10px;
+            font-size: 16px;
+            padding: 10px 10px 0 10px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        .section ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .section ul li img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background-color: #ccc;
+            border-radius: 15px;
+        }
+        /* 중앙 요소 */
+        .middle {
+            width: 762px;
+        }
+        /* 탭 선택 */
+        .tab-menu {
+            width: 500px;
+            font-size: 14px;
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 5px 0;
+            margin: 0 auto; /* 가운데 정렬 */
+        }
+        .tab-menu div {
+            text-align: center;
+            flex: 1; /* 부모의 너비가 남을 경우 그 공간을 채우고, 부모가 해당 아이템의 너비보다 작아졌을 때 줄어듦 */
+        }
+        .tab-menu div.select {
+            font-weight: bold; /* 선택 탭 굵게 */
+        }
+        .cursorOn {
+            cursor: pointer;
+        }
+        /* 게시글 */
+        .post-section {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid #CCCCCC;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .user-info p {
+            margin: 0;
+        }
+        .username {
+            font-weight: bold;
+        }
+        .view {
+            color: gray;
+        }
+        .follow-btn {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px 10px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .post-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .post-actions {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .post-actions img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .post-content {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .comment-section {
+            border-top: 1px solid #CCCCCC;
+            padding-top: 10px;
+        }
+        .comment {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .comment img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .comment p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <p class="main-logo" onclick="location.href='Main.html'">공방친구</p>
+    <div class="search-box">
+        <label>
+            <input type="text" placeholder="찾고 싶은 상품을 검색하세요">
+        </label>
+        <img src="image/search.png" alt="검색 아이콘">
+    </div>
+    <div class="profile" onclick="location.href='MyProfile.html'">
+        <img src="image/profile.jpg" alt="프로필 아이콘">
+        <p>권순광</p>
+    </div>
+</div>
+<div class="center">
+    <div class="left-sidebar">
+        <h2 class="category">식품<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">패션<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">뷰티<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">스포츠<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">가구/인테리어<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">생활<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">건강<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <h2 class="category">도서<img src=image/plus.png alt="플러스 아이콘"></h2>
+        <div class="footer">
+            <ul>
+                <li><img src=image/setting.png alt="쇼츠 아이콘"> 쇼츠</li>
+                <li><img src=image/setting.png alt="북마크 아이콘"> 북마크</li>
+                <li><img src=image/setting.png alt="프로필 수정 아이콘"> 프로필 수정</li>
+                <li><img src=image/setting.png alt="기념일 수정 아이콘"> 기념일 수정</li>
+                <li><img src=image/setting.png alt="설정 아이콘"> 설정</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="tab-menu">
+            <div class="cursorOn" onclick="location.href='Main.html'">상품</div>
+            <div class="select">게시글</div>
+            <div class="cursorOn" onclick="location.href='Main_Video.html'">쇼트비디오</div>
+        </div>
+
+        <div class="post-section">
+            <div class="post-header">
+                <div class="user-info">
+                    <img src=image/profile.jpg alt="프로필 이미지">
+                    <div>
+                        <p class="username">권순광</p>
+                        <p class="view">조회수 123K</p>
+                    </div>
+                </div>
+                <div class="follow-btn">팔로우</div>
+            </div>
+            <img class="post-image" src=image/product-soap.png alt="게시글 이미지">
+            <div class="post-actions">
+                <img src=image/like.png alt="좋아요 아이콘">
+                <img src=image/dibs.png alt="북마크 아이콘">
+                <img src=image/share.png alt="공유 아이콘">
+            </div>
+            <div class="post-content">
+                친환경적이어서 피부에 안전한 비누 많이들 구매하세요~~~<br>
+                2개 구매시 할인 이벤트 중입니다!
+            </div>
+            <div class="comment-section">
+                <div class="comment">
+                    <img src="image/soap-explanation.png" alt="댓글 작성자 이미지">
+                    <p><strong>김채영:</strong> 3번째 재구매 중입니다! 너무 좋아요~!</p>
+                </div>
+            </div>
+            <!-- 게시글 생성 버튼 추가-->
+            <div class="create-btn">
+                <a href="CreatePost.html">생성</a>  <!-- 이 경로를 사용하면 templates 폴더의 index.html로 이동 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="right-sidebar">
+        <div class="section">
+            <h3>추천 카테고리</h3>
+            <ul>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리1</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리2</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리3</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리4</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리5</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리6</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리7</li>
+                <li><img src=image/setting.png alt="카테고리 아이콘">카테고리8</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3>추천 작가</h3>
+            <ul>
+                <li><img src=image/setting.png alt="작가 아이콘">작가1</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가2</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가3</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가4</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가5</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가6</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가7</li>
+                <li><img src=image/setting.png alt="작가 아이콘">작가8</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<!-- <a href="https://kr.freepik.com/icon/like_5616548">bearicons 제작 아이콘</a> -->
+<!-- <a href="https://kr.freepik.com/icon/heart_6521659#fromView=search&page=1&position=19&uuid=615dc2cb-18b3-47e7-95f0-f6bc344c1d97">bong 제작 아이콘</a> -->
+<!-- <a href="https://kr.freepik.com/icon/share_1358023">Freepik 제작 아이콘</a> -->

@@ -1,0 +1,184 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ko">-->
+<!--<head>-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Title</title>&ndash;&gt;-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>공방친구</title>-->
+<!--    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css" rel="stylesheet">-->
+<!--    <style>-->
+<!--        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');-->
+<!--        @font-face {-->
+<!--            font-family: 'Ownglyph_ryuttung-Rg';-->
+<!--            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');-->
+<!--            font-weight: normal;-->
+<!--            font-style: normal;-->
+<!--        }-->
+<!--        html, body {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            min-width: 1000px; /* 최소 너비 설정 */-->
+<!--            min-height: 100%; /* 최소 높이를 뷰포트 높이로 설정 */-->
+<!--        }-->
+<!--        body {-->
+<!--            display: flex;-->
+<!--            flex-direction: column;-->
+<!--            align-items: center;-->
+<!--            width: 100%;-->
+<!--            /* font-family: 'Nanum Gothic', sans-serif; */  /* 구글 폰트 - 나눔 고딕 */-->
+<!--            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;  /* 눈누 - 온글잎 루뚱체 */-->
+<!--        }-->
+<!--        /* 상단 바 */-->
+<!--        .header {-->
+<!--            width: 100%;-->
+<!--            height: 90px;-->
+<!--            display: flex;-->
+<!--            justify-content: space-between; /* 양쪽으로 우선 정렬 */-->
+<!--            align-items: center;-->
+<!--            border-bottom: 1px solid black;-->
+<!--        }-->
+<!--        .main-logo {-->
+<!--            padding-left: 20px;-->
+<!--            font-size: 40px;-->
+<!--            color: #7C6E14;-->
+<!--            font-family: 'NanumDaHaengCe', sans-serif; /* 네이버 폰트 - 나눔 다행체 */-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .search-box {-->
+<!--            width: 500px;-->
+<!--            height: 45px;-->
+<!--            position: relative;-->
+<!--            border: 2px solid black;-->
+<!--            border-radius: 3px;-->
+<!--        }-->
+<!--        .search-box input[type="text"] {-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--            border: none;-->
+<!--            font-size: 18px;-->
+<!--            padding-left: 10px;-->
+<!--            padding-right: 40px;-->
+<!--            box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */-->
+<!--            color: #4e4e4e;-->
+<!--            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;-->
+<!--        }-->
+<!--        .search-box img {-->
+<!--            position: absolute;-->
+<!--            width: 30px;-->
+<!--            height: 30px;-->
+<!--            right: 10px;-->
+<!--            top: 8px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .profile {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            font-size: 28px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        .profile img {-->
+<!--            width: 50px;-->
+<!--            height: 50px;-->
+<!--            border-radius: 50%;-->
+<!--        }-->
+<!--        .profile p {-->
+<!--            margin-left: 15px;-->
+<!--            width: 112px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--&lt;!&ndash;<div class="middle">&ndash;&gt;-->
+<!--&lt;!&ndash;    &ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--<body>-->
+<!--    <div class="header">-->
+<!--        <p class="main-logo" onclick="location.href='Main.html'">공방친구</p>-->
+<!--        <div class="search-box">-->
+<!--            <label>-->
+<!--                <input type="text" placeholder="찾고 싶은 상품을 검색하세요">-->
+<!--            </label>-->
+<!--            <img src="image/search.png" alt="검색 아이콘">-->
+<!--        </div>-->
+<!--        <div class="profile" onclick="location.href='MyProfile.html'">-->
+<!--            <img src="image/profile.jpg" alt="프로필 아이콘">-->
+<!--            <p>권순광</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;action속성: 목적지(서버주소), method속성: http request method(get,post)&ndash;&gt;-->
+<!--    <form action="/board/CreatePost" method="post">-->
+<!--        writer: <input type="text" name="nickName"> <br>   &lt;!&ndash;boardWriter == nickname&ndash;&gt;-->
+<!--        pass: <input type="text" name="boardPass"> <br>-->
+<!--        title: <input type="text" name="boardTitle"> <br>-->
+<!--        contents: <textarea name="postContent" cols="30" rows="10"></textarea> <br>-->
+<!--        <input type="submit" value="글작성">-->
+<!--    </form>-->
+<!--</body>-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;action속성: 목적지(서버주소), method속성: http request method(get,post)&ndash;&gt;-->
+<!--&lt;!&ndash;<form action="/board/CreatePost" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;    writer: <input type="text" name="nickName"> <br>   &lt;!&ndash;boardWriter == nickname&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    pass: <input type="text" name="boardPass"> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;    title: <input type="text" name="boardTitle"> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;    contents: <textarea name="postContent" cols="30" rows="10"></textarea> <br>&ndash;&gt;-->
+<!--&lt;!&ndash;    <input type="submit" value="글작성">&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글 작성하기</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css" rel="stylesheet">
+</head>
+<body>
+<div>
+    <div class="header">
+        <p class="main-logo"><a href="/" class="link-style">공방친구</a></p>
+        <div class="search-box">
+            <label>
+                <input type="text" placeholder="찾고 싶은 상품을 검색하세요" />
+            </label>
+            <img src="image/search.png" alt="검색 아이콘" />
+        </div>
+        <div class="profile">
+            <a href="/MyProfile" class="link-style"><img src="image/profile.jpg" alt="프로필 아이콘" /></a>
+            <a href="/MyProfile" class="link-style"><p>권순광</p></a>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="post-create">
+            <h2>글 작성하기</h2>
+            <form>
+                <div>
+                    <label for="postContent">내용을 입력하세요:</label>
+                </div>
+                <div>
+                    <textarea id="postContent" placeholder="내용을 입력하세요" rows="6" class="full-width-textarea"></textarea>
+                </div>
+                <button type="submit">저장</button>
+            </form>
+            <div class="cancel-btn">
+                <a href="MainPost.html">취소</a>
+            </div>
+        </div>
+    </div>
+<!--    <div class="middle">-->
+<!--        <div class="post-create">-->
+<!--            <h2>글 작성하기</h2>-->
+<!--            <form>-->
+<!--                <label>-->
+<!--                    <textarea placeholder="내용을 입력하세요" class="content-input" rows="5"></textarea>-->
+<!--                </label>-->
+<!--                <button type="submit" class="submit-button">게시하기</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+</body>
+</html>

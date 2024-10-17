@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공방친구</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        @font-face {
+            font-family: 'Ownglyph_ryuttung-Rg';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-width: 1000px; /* 최소 너비 설정 */
+            min-height: 100%; /* 최소 높이를 뷰포트 높이로 설정 */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            /* font-family: 'Nanum Gothic', sans-serif; */  /* 구글 폰트 - 나눔 고딕 */
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;  /* 눈누 - 온글잎 루뚱체 */
+        }
+        /* 상단 바 */
+        .header {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between; /* 양쪽으로 우선 정렬 */
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        .main-logo {
+            padding-left: 20px;
+            font-size: 40px;
+            color: #7C6E14;
+            font-family: 'NanumDaHaengCe', sans-serif; /* 네이버 폰트 - 나눔 다행체 */
+            cursor: pointer;
+        }
+        .search-box {
+            width: 500px;
+            height: 45px;
+            position: relative;
+            border: 2px solid black;
+            border-radius: 3px;
+        }
+        .search-box input[type="text"] {
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: 18px;
+            padding-left: 10px;
+            padding-right: 40px;
+            box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+            color: #4e4e4e;
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+        }
+        .search-box img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            top: 8px;
+            cursor: pointer;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .profile p {
+            margin-left: 15px;
+            width: 112px;
+        }
+        /* 중앙 부분 */
+        .profile-container {
+            width: 912px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+        }
+        /* 프로필 사이드바 */
+        .profile-sidebar{
+            display: flex;
+            flex-direction: column;
+            width: 150px;
+            border-left: 1px solid #cccccc;
+        }
+        .profile-side-up {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #CCC;
+        }
+        .profile-side-up h2 {
+            margin: 20px 0 10px 0;
+        }
+        .profile-side-up img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .username-side {
+            font-weight: bold;
+            font-size: 24px;
+            margin: 15px 0 0 0;
+        }
+        .profile-side-follow {
+            display: flex;
+            justify-content: space-between;
+        }
+        .profile-side-follow div {
+            margin: 0 10px;
+        }
+        .profile-side-follow div p {
+            text-align: center;
+            margin: 10px 0;
+        }
+        .profile-menu {
+            border-bottom: 1px solid #CCC;
+        }
+        .profile-menu-item {
+            cursor: pointer;
+            padding: 5px 5px 5px 10px;
+        }
+        /* 프로필 메인 */
+        .profile-main {
+            width: 762px;
+            border: 1px solid #cccccc;
+            /* box-sizing: border-box; 일단 필요 없는것 같아서 없애봄 */
+            background-color: #f9f9f9;
+        }
+        .bookmark-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <p class="main-logo" onclick="location.href='Main.html'">공방친구</p>
+    <div class="search-box">
+        <label>
+            <input type="text" placeholder="찾고 싶은 상품을 검색하세요">
+        </label>
+        <img src="image/search.png" alt="검색 아이콘">
+    </div>
+    <div class="profile" onclick="location.href='MyProfile.html'">
+        <img src="image/profile.jpg" alt="프로필 아이콘">
+        <p>권순광</p>
+    </div>
+</div>
+
+<div class="profile-container">
+    <div class="profile-sidebar">
+        <div class="profile-side-up">
+            <h2 class="bold">마이페이지</h2>
+            <img src=image/profile.jpg alt="프로필 이미지">
+            <p class="username-side">독고순광</p>
+            <div class="profile-side-follow">
+                <div>
+                    <p class="bold">내 팔로워</p>
+                    <p>150</p>
+                </div>
+                <div>
+                    <p class="bold">내 팔로우</p>
+                    <p>20</p>
+                </div>
+            </div>
+        </div>
+        <div class="profile-left-down">
+            <div class="profile-menu">
+                <div class="profile-menu-item" onclick="location.href='MyProfile.html'">마이페이지</div>
+            </div>
+            <div class="menu">
+                <div class="profile-menu-item" onclick="location.href='UserInfoFix.html'">회원 정보 수정</div>
+                <div class="profile-menu-item" onclick="location.href='MyCart.html'">장바구니</div>
+                <div class="profile-menu-item bold" onclick="location.href='MyBookmark.html'">북마크</div>
+                <div class="profile-menu-item" onclick="location.href='MyProduct.html'">내 상품</div>
+                <div class="profile-menu-item" onclick="location.href='MyPost.html'">내 게시글</div>
+                <div class="profile-menu-item" onclick="location.href='MyVideo.html'">내 쇼트비디오</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-main">
+        <div class="bookmark-header">
+            <h2>북마크</h2>
+        </div>
+    </div>
+</div>
+</body>
+</html>

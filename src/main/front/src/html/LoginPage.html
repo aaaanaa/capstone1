@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공방친구-로그인</title>
+    <!--아래 링크는 폰트 설정-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<form id="login-form" name="login">
+    <h1 class="login-title">로그인</h1>
+    <div id="email-field">
+        <label for="id">
+            아이디
+        </label>
+        <input id="id" name="id" type="email" placeholder="아이디">
+        <div class="error-message"></div>
+    </div>
+    <div id="password-field">
+        <label for="password">
+            비밀번호
+        </label>
+        <input id="password" name="password" type="password" placeholder="비밀번호">
+        <div class="error-message"></div>
+    </div>
+    <button type="submit">
+        가입하기
+    </button>
+    <div class="register-message">
+        아직 회원이 아니신가요? <a href="/register">회원가입</a>
+    </div>
+</form>
+</body>
+</html>

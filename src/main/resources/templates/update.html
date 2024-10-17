@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang=ko xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+<body>
+<form th:action="@{|/update/${post.post_no}|}" method="post" name="updateForm">
+    <input type="hidden" name="post_no" th:value="${post.post_no}">
+    nickName: <input type="text" name="nickName" th:value="${post.nickName}" readonly><br>
+    postContent: <textarea name="postContent" cols="30" rows="10" th:text="${post.postContent}"></textarea><br>
+<!--    <input type="button" value="수정" onclick="board_update()">-->
+    <input type="submit" value="수정"> <!--submit-->
+</form>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* 메인 컨텐츠 부분 */
+.center {
+    display: flex;
+    /* flex-direction: row; /* 수평 정렬 */
+    /* align-items: start; /* 없어도 잘됨. 혹시모르니 놔두기 */
+    width: 100%;
+    justify-content: space-between;
+}
+/* 왼쪽 사이드바 */
+.left-sidebar {
+    width: 250px;
+    height: 700px;
+    background-color: #f5f5dc;
+    font-size: 14px;
+    border: 1px solid #DDDDDD;
+    position: relative; /* .footer position: absolute랑 세트 */
+}
+.left-sidebar h2 {
+    display: flex;       /* Flexbox 레이아웃을 사용 */
+    justify-content: space-between;
+    align-items: center; /* 세로 방향으로 중앙 정렬 */
+}
+.left-sidebar h2 img {
+    width: 20px;
+    height: 20px;
+}
+.category {
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+.footer {
+    width: 100%;
+    font-size: 18px;
+    position: absolute; /* 아래줄 bottom: 5px과 같이 아래쪽으로 붙도록 도와줌 */
+    bottom: 5px;
+}
+.footer ul {
+    list-style-type: none; /* li의 점 없애기 */
+    padding: 10px;
+    margin: 0;
+}
+.footer ul li {
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+.footer ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 20px;
+}
+/* 오른쪽 사이드바 */
+.right-sidebar {
+    width: 250px;
+    height: 700px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.section {
+    border-bottom: 1px solid #ddd;
+}
+.section h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    padding: 10px 10px 0 10px;
+}
+.section ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
+.section ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.section ul li img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    background-color: #ccc;
+    border-radius: 15px;
+}
+/* 중앙 요소 */
+.middle {
+    width: 762px;
+}
+/* 탭 선택 */
+.tab-menu {
+    width: 500px;
+    font-size: 14px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+.tab-menu div {
+    text-align: center;
+    flex: 1; /* 부모의 너비가 남을 경우 그 공간을 채우고, 부모가 해당 아이템의 너비보다 작아졌을 때 줄어듦 */
+}
+.tab-menu div.select {
+    font-weight: bold; /* 선택 탭 굵게 */
+}
+.cursorOn {
+    cursor: pointer;
+}
+/* 게시글 */
+.post-section {
+    width: 500px;
+    margin: 20px auto;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.user-post-info {
+    display: flex;
+    align-items: center;
+}
+.user-post-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.user-post-info p {
+    margin: 0;
+}
+.username {
+    font-weight: bold;
+}
+.view {
+    color: gray;
+}
+.follow-btn {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.post-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.post-actions img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.post-content {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+.comment-section {
+    border-top: 1px solid #CCCCCC;
+    padding-top: 10px;
+}
+.comment {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.comment img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.comment p {
+    margin: 0;
+}
+
+/*생성 버튼*/
+.create-btn {
+    display:  block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #cdaba4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.create-btn:hover {
+    background-color: #835947;
+}

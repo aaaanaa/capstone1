@@ -1,0 +1,66 @@
+/* 상품 구매 정보 메인 */
+.purchase-main {
+    width: 350px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+.purchase-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.purchase-section-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.consumer-info span, .item-info span, .payment-info span {
+    display: block;
+}
+.consumer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.consumer-info div {
+    margin-bottom: 10px;
+}
+.item-info img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+.item-info {
+    display: flex;
+    flex-direction: row;
+}
+.payment-info {
+    display: flex;
+    flex-direction: column;
+}
+.total-amount {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.payment-button {
+    flex: 1;
+    display: block;
+    padding: 10px;
+    background-color: #ddd;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.payment-button:hover {
+    background-color: #ccc;
+}

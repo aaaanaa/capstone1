@@ -1,0 +1,97 @@
+body {
+    align-items: unset; /* 상위 코드에 있는 align-item 비활성화 */
+}
+/* 상품 페이지 */
+.product-middle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+.product-info p {
+    text-align: center;
+    font-size: 18px;
+}
+.product-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+}
+.button-link {
+    flex: 1;
+    padding: 10px 0;
+    margin: 0 5px;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}
+.button-link:hover {
+    background-color: #DDD;
+}
+.product-tab {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    display: flex;
+}
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+}
+.tab:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+.tab.select {
+    font-weight: bold;
+}
+.product-explanation {
+    width: 70%;
+    height: 70%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+.image-ex {
+    padding: 20px;
+}

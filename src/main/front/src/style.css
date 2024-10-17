@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #4e4e4e;
+    font-family: Roboto, 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    color: #4e4e4e;
+}
+
+input {
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    padding: 11px 15px;
+}
+
+input::placeholder {
+    color: #ababab;
+}
+
+button {
+    background-color: black;
+    border-radius: 6px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+}
+
+#login-form {
+    margin: 140px auto;
+    width: 350px;
+}
+
+.login-title {
+    font-size: 30px;
+    text-align: left;
+}
+
+#login-form label {
+    display: block;
+    margin: 24px 0 8px;
+    text-align: left;
+}
+
+#login-form input {
+    display: block;
+    margin: 8px 0;
+    width: 100%;
+}
+
+#login-form button {
+    display: block;
+    margin: 24px 0;
+    width: 100%;
+}
+
+.register-message {
+    color: #ababab;
+    margin: 24px 0;
+    text-align: center;
+}

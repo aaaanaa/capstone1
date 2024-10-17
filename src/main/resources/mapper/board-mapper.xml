@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--<mapper namespace="Post">-->
+<!--    &lt;!&ndash; sql문이 작성되는 공간  &ndash;&gt;-->
+<!--    <insert id="save" parameterType="com.example.capstone.dto.BoardDTO">-->
+<!--        insert into post(nickName, postContent)-->
+<!--        values(#{nickName}, #{postContent})-->
+<!--&#45;&#45;         insert into post(boardTitle, nickName, postContent)-->
+<!--&#45;&#45;         values(#{boardTitle}, #{nickName}, #{postContent})-->
+<!--    </insert>-->
+<!--    <select id="findAll" resultType="com.example.capstone.dto.BoardDTO">-->
+<!--        select post_no, nickName, postVisit, date_format(postCreateDate, "%Y-%m-%d") as postCreateDate-->
+<!--        from post-->
+<!--        order by post_no desc-->
+<!--&#45;&#45;         post_no 말고 id 있었음-->
+<!--    </select>-->
+<!--    <update id="updateVisit" parameterType="Long">-->
+<!--        update post-->
+<!--        set postVisit = postVisit+1 where post_no=#{post_no}  &#45;&#45;post_no말고 id있었음-->
+<!--    </update>-->
+
+<!--    <select id="findById" parameterType="Long" resultType="com.example.capstone.dto.BoardDTO">-->
+<!--        select post_no, nickName, postContent, postVisit,-->
+<!--        date_format(postCreateDate, "%Y-%m-%d") as postCreateDate-->
+<!--        from post-->
+<!--        where post_no=#{post_no}  &#45;&#45;id였음-->
+<!--    </select>-->
+
+<!--    <update id="update" parameterType="com.example.capstone.dto.BoardDTO">-->
+<!--        update post-->
+<!--        set postContent=#{postContent}-->
+<!--        where post_no=#{post_no}-->
+<!--    </update>-->
+
+<!--    <delete id="delete" parameterType="Long">-->
+<!--        delete from post-->
+<!--        where post_no=#{post_no}-->
+<!--    </delete>-->
+<!--</mapper>-->
+
+<mapper namespace="com.example.capstone.repository.BoardRepository">
+
+    <insert id="save" parameterType="com.example.capstone.dto.BoardDTO">
+        INSERT INTO post (post_no, nickName, postContent, postVisit, postCreateDate, postUpdateDate)
+        VALUES (#{post_no}, #{nickName}, #{postContent}, #{postVisit}, #{postCreateDate}, #{postUpdateDate})
+    </insert>
+
+    <select id="findAll" resultType="com.example.capstone.dto.BoardDTO">
+        SELECT * FROM post
+    </select>
+
+    <update id="updateVisit">
+        UPDATE post SET postVisit = postVisit + 1 WHERE post_no = #{post_no}
+    </update>
+
+    <select id="findById" parameterType="long" resultType="com.example.capstone.dto.BoardDTO">
+        SELECT * FROM post WHERE post_no = #{post_no}
+    </select>
+
+    <update id="update" parameterType="com.example.capstone.dto.BoardDTO">
+        UPDATE post SET
+                        nick_name = #{nickName},
+                        post_content = #{postContent},
+                        post_update_date = #{postUpdateDate}
+        WHERE post_no = #{post_no}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM post WHERE post_no = #{post_no}
+    </delete>
+
+</mapper>

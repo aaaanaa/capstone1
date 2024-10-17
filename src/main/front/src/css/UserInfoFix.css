@@ -1,0 +1,117 @@
+/* 중앙 부분 */
+.profile-container {
+    width: 912px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+/* 프로필 사이드바 */
+.profile-sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border-left: 1px solid #cccccc;
+}
+.profile-side-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #CCC;
+}
+.profile-side-up h2 {
+    margin: 20px 0 10px 0;
+}
+.profile-side-up img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.username-side {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 15px 0 0 0;
+}
+.profile-side-follow {
+    display: flex;
+    justify-content: space-between;
+}
+.profile-side-follow div {
+    margin: 0 10px;
+}
+.profile-side-follow div p {
+    text-align: center;
+    margin: 10px 0;
+}
+.profile-menu {
+    border-bottom: 1px solid #CCC;
+}
+.profile-menu-item {
+    cursor: pointer;
+    padding: 5px 5px 5px 10px;
+}
+/* 프로필 메인 */
+.profile-main {
+    width: 762px;
+    border: 1px solid #cccccc;
+    /* box-sizing: border-box; 일단 필요 없는것 같아서 없애봄 */
+    background-color: #f9f9f9;
+}
+.userinfo-header {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+.userinfo-header h2 {
+    margin-bottom: 20px;
+}
+.userinfo-header form {
+    display: flex;
+    flex-direction: column;
+}
+.userinfo-header form label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #555;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+.userinfo-header form textarea,
+.userinfo-header form select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+}
+.userinfo-header form textarea {
+    resize: none;
+}
+.userinfo-change {
+    display: flex;
+    justify-content: flex-end;
+}
+.userinfo-change-button {
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 30px 0;
+    /*transition: background-color 0.3s ease; 애니메이션처럼 점점 바뀜*/
+}
+.userinfo-change-button:hover {
+    background-color: #ccc;
+}
+.bold {
+    font-weight: bold;
+}

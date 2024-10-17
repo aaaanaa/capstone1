@@ -1,0 +1,38 @@
+# 서버 포트 설정
+server:
+  port: 8080
+
+# database 연동
+spring:
+  datasource:
+#    shop:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      url: jdbc:mysql://localhost:3306/shop?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false
+#      username: hyuna
+#      password: Abcd1234@
+    capstone:
+      url: jdbc:mysql://localhost:3306/capstone?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+      username: hyuna
+      password: Abcd1234@
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    cache: false
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  mvc:
+    throw-exception-if-no-handler-found: false
+    static-path-pattern: /**
+  web:
+    resources:
+      add-mappings: true
+
+# mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml

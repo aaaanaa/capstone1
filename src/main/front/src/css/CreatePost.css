@@ -1,0 +1,153 @@
+/* 메인 컨텐츠 부분 */
+.center {
+    display: flex;
+    /* flex-direction: row; /* 수평 정렬 */
+    /* align-items: start; /* 없어도 잘됨. 혹시모르니 놔두기 */
+    width: 100%;
+    justify-content: space-between;
+}
+/* 게시글 */
+.post-section {
+    /*width: 500px;*/
+    width: 80%;
+    max-width: 500px; /* Optional: limit the max width */
+    margin: 20px auto;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/*취소 버튼*/
+.cancel-btn {
+    display: block;
+    width: 20%;
+    margin: 5px auto;
+    padding: 10px 20px;
+    background-color: #cdaba4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    top: -30px
+}
+
+.cancel-btn:hover {
+    background-color: #7e5949;
+}
+
+/*저장 버튼*/
+.submit-btn {
+    display: block;
+    width: 20%;
+    margin: 50px auto;
+    padding: 10px 20px;
+    background-color: #b19179;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #7e5949;
+}
+
+.middle {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+}
+
+/* 글 작성하기 form */
+.post-create {
+    position: absolute;
+    width: 85%; /* Adjust this for width */
+    /*max-width: 2000px;*/
+    margin-top: 90px; /* Horizontally center the container */
+    margin-left: 100px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/*내용 입력칸*/
+.full-width-textarea {
+    width: 95%;                  /* Full width of the container */
+    height: 300px;               /* Adjust height as needed */
+    padding: 10px;               /* Padding for comfort */
+    border: 1px solid #ccc;      /* Border styling */
+    border-radius: 5px;          /* Rounded corners */
+    font-size: 1rem;             /* Font size */
+    box-sizing: border-box;       /* Include padding and border in the element's total width and height */
+    margin-left: 50px;
+    margin-top: -20px
+}
+
+/*'내용:' 글자*/
+.post-create label {
+    display: block;              /* Display label as block element */
+    margin-top: 30px;           /* Space above the label */
+    margin-left: 10px;
+    font-size: 18px;             /* Adjust label font size */
+}
+/*'글 작성하기'*/
+.post-create h2 {
+    margin-left: 10px; /* Move the "글 작성하기" text 10px to the left */
+    font-size: 1.5em; /* Optional: Adjust the font size if needed */
+    font-weight: bold; /* Optional: Make the heading bold */
+}
+
+.textarea {
+    width: 100%; /* Make textarea full width */
+    margin-left: 60px;
+    margin-top: -40px;
+    max-width: 400px; /* Optional: limit the max width */
+    height: 40px; /* Set height */
+    padding: 10px; /* Padding for comfort */
+    border: 1px solid #ccc; /* Border styling */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    box-sizing: border-box; /* Include padding and border in total width/height */
+}
+
+.post-header {
+    position: relative;
+    margin-bottom: 16px; /* 헤더와 폼 사이의 간격 */
+}
+
+.action-buttons {
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    display: flex;
+    gap: 10px; /* 버튼 간의 간격 조절 */
+}
+
+.edit-btn, .delete-btn {
+    background-color: #c37b60; /* 원하는 색상으로 변경 */
+    color: #000000;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    background-color: #754216; /* 호버 시 색상 변경 */
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>post_no</th>
+        <td th:text="${post.post_no}"></td>
+    </tr>
+    <tr>
+        <th>nickName</th>
+        <td th:text="${post.nickName}"></td>
+    </tr>
+    <tr>
+        <th>postCreateDate</th>
+        <td th:text="${post.postCreateDate}"></td>
+    </tr>
+    <tr>
+        <th>postVisit</th>
+        <td th:text="${post.postVisit}"></td>
+    </tr>
+    <tr>
+        <th>postContent</th>
+        <td th:text="${post.postContent}"></td>
+    </tr>
+</table>
+<button onclick="listReq()">목록</button>
+<button onclick="updateReq()">수정</button>
+<button onclick="deleteReq()">삭제</button>
+</body>
+<script th:inline="javascript">
+    // import {post} from "axios";
+
+    const listReq = () => {
+        location.href = "/list";
+    }
+    //수정버튼 클릭시 실행되는 함수
+    const updateReq = () => {
+        location.href = `/update/[[${post.post_no}]]`;
+    }
+    //삭제버튼 클릭시 실행되는 함수
+    const deleteReq = () => {
+        location.href = `/delete/[[${post.post_no}]]`;
+    }
+</script>
+</html>

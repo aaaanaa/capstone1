@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <title>Title</title>
+ <link rel="icon" type="image/x-icon" href="/favicon.png">
+ <style>
+   table, tr, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+   }
+   th, td {
+    padding: 10px;
+   }
+ </style>
+</head>
+<body>
+<a href="/save">글쓰기</a>
+<table>
+ <tr>
+  <th>번호</th>
+<!--  <th>제목</th>-->
+  <th>작성자</th>
+  <th>작성시간</th>
+  <th>조회수</th>
+ </tr>
+  <tr th:each="post: ${boardList}">
+   <td th:text="${post.post_no}"></td>
+<!--    <td>-->
+<!--   <a th:text="${post.postContent}" th:href="@{|/${post.post_no}|}"></a>-->
+<!--   </td>-->
+   <td th:text="${post.nickName}"></td>
+   <td th:text="${post.postCreateDate}"></td>
+   <td th:text="${post.postVisit}"></td>
+      <td>
+          <a th:href="@{/post/{post_no}(post_no=${post.post_no})}">상세보기</a>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

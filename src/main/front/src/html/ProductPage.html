@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공방친구</title>
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/NanumDaHaengCe.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        @font-face {
+            font-family: 'Ownglyph_ryuttung-Rg';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-width: 1000px; /* 최소 너비 설정 */
+            min-height: 100%; /* 최소 높이를 뷰포트 높이로 설정 */
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            /* font-family: 'Nanum Gothic', sans-serif; */  /* 구글 폰트 - 나눔 고딕 */
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;  /* 눈누 - 온글잎 루뚱체 */
+        }
+        /* 상단 바 */
+        .header {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-between; /* 양쪽으로 우선 정렬 */
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        .main-logo {
+            padding-left: 20px;
+            font-size: 40px;
+            color: #7C6E14;
+            font-family: 'NanumDaHaengCe', sans-serif; /* 네이버 폰트 - 나눔 다행체 */
+            cursor: pointer;
+        }
+        .search-box {
+            width: 500px;
+            height: 45px;
+            position: relative;
+            border: 2px solid black;
+            border-radius: 3px;
+        }
+        .search-box input[type="text"] {
+            width: 100%;
+            height: 100%;
+            border: none;
+            font-size: 18px;
+            padding-left: 10px;
+            padding-right: 40px;
+            box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+            color: #4e4e4e;
+            font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+        }
+        .search-box img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            top: 8px;
+            cursor: pointer;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .profile p {
+            margin-left: 15px;
+            width: 112px;
+        }
+        /* 상품 페이지 */
+        .product {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-top {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .product-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            /* border: 1px solid #ddd; /* 나중에 없앨 부분 */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        .product-info p {
+            text-align: center;
+            font-size: 18px;
+        }
+        .product-button {
+            display: flex;
+            justify-content: space-around; /* https://buly.kr/8Itp3Qx 참조 */
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+        .product-button button {
+            flex: 1;
+            padding: 10px 0;
+            margin: 0 5px;
+            font-size: 18px;
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            cursor: pointer;
+        }
+        /* 상품 탭 */
+        .product-tab {
+            width: 100%;
+            border-bottom: 1px solid #ccc;
+            font-size: 16px;
+            display: flex;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;
+        }
+        .tab:not(:last-child) {
+            border-right: 1px solid #ccc; /* 각 탭 사이에 회색 선 추가 */
+        }
+        .tab.select {
+            font-weight: bold;
+        }
+        /* 상품 설명창 */
+        .product-explanation {
+            width: 70%;
+            height: 70%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+        .image-ex{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <p class="main-logo" onclick="location.href='Main.html'">공방친구</p>
+    <div class="search-box">
+        <label>
+            <input type="text" placeholder="찾고 싶은 상품을 검색하세요">
+        </label>
+        <img src="image/search.png" alt="검색 아이콘">
+    </div>
+    <div class="profile" onclick="location.href='MyProfile.html'">
+        <img src="image/profile.jpg" alt="프로필 아이콘">
+        <p>권순광</p>
+    </div>
+</div>
+<div class="product">
+    <div class="product-top">
+        <div class="product-image">
+            <img src=image/product-soap.png alt="상품 이미지">
+        </div>
+        <div class="product-info">
+            <p>상품 가격 및 배송 정보</p>
+            <div class="product-button">
+                <button>장바구니</button>
+                <button onclick="location.href='PurchasePage.html'">구매하기</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-explanation">
+        <div class="product-tab">
+            <div class="tab select">상품상세</div>
+            <div class="tab">상품후기 (0)</div>
+            <div class="tab">상품문의</div>
+            <div class="tab">배송/교환/반품 안내</div>
+        </div>
+        <p></p>
+        <p>피부에 민감한 사람들을 위해 준비했습니다</p>
+        <img src=image/product-soap.png class="image-ex" alt="상품 설명">
+        <img src=image/soap-explanation.png class="image-ex" alt="상품 설명2">
+    </div>
+</div>
+</body>
+</html>

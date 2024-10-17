@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@font-face {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 1256px; /* 최소 너비 설정 */
+    min-height: 100%; /* 최소 높이를 뷰포트 높이로 설정 */
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* font-family: 'Nanum Gothic', sans-serif; */  /* 구글 폰트 - 나눔 고딕 */
+    font-family: 'Ownglyph_ryuttung-Rg', sans-serif;  /* 눈누 - 온글잎 루뚱체 */
+}
+/* 상단 바 */
+.header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between; /* 양쪽으로 우선 정렬 */
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.main-logo {
+    padding-left: 20px;
+    font-size: 40px;
+    color: #7C6E14;
+    /* font-family: 'NanumDaHaengCe', sans-serif; */ /* 네이버 폰트 - 나눔 다행체 */
+    cursor: pointer;
+}
+.search-box {
+    width: 500px;
+    /* height: 45px; 이거 없애니 정상적으로 돌아옴. 혹시 모르니 남겨두기 */
+    position: relative;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+.search-box input[type="text"] {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 40px;
+    box-sizing: border-box; /* padding과 border가 width에 포함되도록 설정 */
+    color: #4e4e4e;
+    font-family: 'Ownglyph_ryuttung-Rg', sans-serif;
+}
+.search-box img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    top: 8px;
+    cursor: pointer;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+}
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.profile p {
+    margin-left: 15px;
+    width: 112px;
+}
+
+.link-style {
+    color: black;      /* 글씨 색상을 검은색으로 설정 */
+    text-decoration: none; /* 밑줄 없애기 */
+}
+.bold {
+    font-weight: bold;
+}
